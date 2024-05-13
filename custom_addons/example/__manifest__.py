@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "chatgpt_integration",
+    'name': "example",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 

@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- Define the view for your model -->
+        <record id="chatgpt_api.view_chatgpt_form" model="ir.ui.view">
+            <field name="name">chatgpt_api.prompt</field>
+            <field name="model">chatgpt_api.chatgpt_api</field>
+            <field name="arch" type="xml">
+                <form string="ChatGPT Prompt">
+                    <!-- Define the fields -->
+                    <group>
+                        <field name="prompt" placeholder="Enter your prompt..." />
+                        <field name="response" readonly="1" />
+                    </group>
+                    <!-- Define the button to trigger the action -->
+                    <group>
+                        <button name="send_prompt" string="Send Request" type="object"
+                            class="btn-primary" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Define the action for your view -->
+        <record id="action_chatgpt_prompt_form" model="ir.actions.act_window">
+            <field name="name">ChatGPT Prompt</field>
+            <field name="res_model">chatgpt_api.chatgpt_api</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="chatgpt_api.view_chatgpt_form" />
+            <field name="target">current</field>
+        </record>
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="chatgpt_api" id="chatgpt_api.menu_root" action="action_chatgpt_prompt_form" />
+
+    </data>
+</odoo>
