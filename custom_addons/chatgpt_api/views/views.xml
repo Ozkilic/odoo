@@ -5,7 +5,7 @@
             <field name="name">chatgpt_api.prompt</field>
             <field name="model">chatgpt_api.chatgpt_api</field>
             <field name="arch" type="xml">
-                <form string="ChatGPT Prompt">
+                <form string="ChatGPT Prompt" create="false">
                     <!-- Define the fields -->
                     <group>
                         <field name="prompt" placeholder="Enter your prompt..." />
@@ -15,6 +15,8 @@
                     <group>
                         <button name="send_prompt" string="Send Request" type="object"
                             class="btn-primary" />
+                        <button name="get_facebook_profile" string="Post" type="object"
+                            class="btn-secondary" />
                     </group>
                 </form>
             </field>
