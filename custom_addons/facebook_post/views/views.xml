@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_facebook_post_form" model="ir.ui.view">
+        <field name="name">facebook.post.form</field>
+        <field name="model">facebook.post</field>
+        <field name="arch" type="xml">
+            <form string="Facebook Post">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <!-- <field name="prompt" /> -->
+                        <field name="message" />
+                        <field name="image" filename="image_filename"/>
+                        <button string="Generate Message and Image" type="object"
+                            name="generate_message_and_image" class="btn-primary" />
+                        <button string="Post to Facebook" type="object" name="create_facebook_post"
+                            class="btn-secondary" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_facebook_post_tree" model="ir.ui.view">
+        <field name="name">facebook.post.tree</field>
+        <field name="model">facebook.post</field>
+        <field name="arch" type="xml">
+            <tree string="Facebook Posts">
+                <field name="name" />
+                <field name="prompt" />
+                <field name="message" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="facebook_post_action" model="ir.actions.act_window">
+        <field name="name">Facebook Posts</field>
+        <field name="res_model">facebook.post</field>
+        <!-- <field name="view_type">form</field> -->
+        <!-- <field name="view_id" ref="view_facebook_post_form" /> -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Facebook Posts" id="facebook_post_menu" action="facebook_post_action" />
+
+</odoo>

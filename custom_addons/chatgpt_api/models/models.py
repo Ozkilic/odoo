@@ -56,3 +56,5 @@ class chatgpt_api(models.Model):
             return True, profile
         except facebook.GraphAPIError as e:
             return False, "Failed to retrieve Facebook profile. Error: {}".format(e.message)
+        
+        
